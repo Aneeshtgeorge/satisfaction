@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer satsifaction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/home.css">
+    
+</head>
+<body>
+    <div class="container" style="margin-left: 10px;margin-right: -52px;">
+        <h2 style="text-align: center;">Please help us to improve overselves.</h2>
+        
+        <div class="row">
+            <div class="col-sm-2">
+                
+            </div>
+            <div class="col-md-8" style="margin-top: 30px;margin-bottom: 30px;">
+                <form action="{{url_for('feedback')}}" method="post" id="form1">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="text" class="form-control" id="Age" name="Age" placeholder="30">
+                    </div>
+                    <div class="form-group">
+                        <label for="Gender">Gender</label>
+                        <select class="form-control" id="Gender" name="Gender">
+                            <option>Female</option>
+                            <option>Male</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Customer_Type">Have you travel by our airlines before?</label>
+                        <select class="form-control" id="Customer_Type" name="Customer_Type">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Type_of_Travel">Type of travel</label>
+                        <select class="form-control" id="Type_of_Travel" name="Type_of_Travel">
+                            <option>Business</option>
+                            <option>Personal</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="Class">Class</label>
+                        <select class="form-control" id="Class" name="Class">
+                            <option>Business</option>
+                            <option>Eco</option>
+                            <option>EcoPlus</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="flight_distance">Flight Distance</label>
+                        <input type="text" class="form-control" id="Flight_Distance" name="Flight_Distance" placeholder="200">
+                    </div>
+                    <div class="form-group">
+                        <label for="Departure_Delay_in_Minutes">Departure Delay in Minutes</label>
+                        <input type="text" class="form-control" id="Departure_Delay_in_Minutes" name="Departure_Delay_in_Minutes" placeholder="20">
+                    </div>
+                    <div class="form-group">
+                        <label for="Arrival_Delay_in_Minutes">Arrival Delay in Minutes</label>
+                        <input type="text" class="form-control" id="Arrival_Delay_in_Minutes" name="Arrival_Delay_in_Minutes" placeholder="20">
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Inflight wifi service
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" name="Inflight_wifi_service" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio1">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input " type="radio" name="Inflight_wifi_service" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_wifi_service" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio1">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_wifi_service" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio1">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_wifi_service" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio1">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_wifi_service" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio1">5</label>
+                            </div>
+                            
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_wifi_service" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio1">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Departure/Arrival time convenient
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Departure/Arrival_time_convenient" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Departure/Arrival_time_convenient" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Departure/Arrival_time_convenient" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Departure/Arrival_time_convenient" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Departure/Arrival_time_convenient" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Departure/Arrival_time_convenient" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Departure/Arrival_time_convenient" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Ease of Online booking
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Ease_of_Online_booking" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Ease_of_Online_booking" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Ease_of_Online_booking" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Ease_of_Online_booking" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Ease_of_Online_booking" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Ease_of_Online_booking" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Ease_of_Online_booking" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Gate_location
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gate_location" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gate_location" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gate_location" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gate_location" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gate_location" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gate_location" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Gate_location" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Food_and_drink
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Food_and_drink" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Food_and_drink" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Food_and_drink" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Food_and_drink" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Food_and_drink" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Food_and_drink" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Food_and_drink" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Online_boarding
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Online_boarding" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Online_boarding" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Online_boarding" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Online_boarding" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Online_boarding" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Online_boarding" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Online_boarding" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Seat_comfort
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Seat_comfort" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Seat_comfort" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Seat_comfort" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Seat_comfort" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Seat_comfort" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Seat_comfort" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Seat_comfort" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Inflight_entertainment
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_entertainment" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_entertainment" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_entertainment" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_entertainment" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_entertainment" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_entertainment" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_entertainment" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            On-board_service
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="On_board_service" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="On_board_service" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="On_board_service" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="On_board_service" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="On_board_service" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="On_board_service" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="On_board_service" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Leg_room_service
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Leg_room_service" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Leg_room_service" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Leg_room_service" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Leg_room_service" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Leg_room_service" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Leg_room_service" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Leg_room_service" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Baggage_handling
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Baggage_handling" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Baggage_handling" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Baggage_handling" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Baggage_handling" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Baggage_handling" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Baggage_handling" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Baggage_handling" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Checkin_service
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Checkin_service" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Checkin_service" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Checkin_service" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Checkin_service" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Checkin_service" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Checkin_service" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Checkin_service" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Inflight_service
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_service" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_service" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_service" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_service" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_service" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_service" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Inflight_service" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            Cleanliness
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Cleanliness" id="inlineRadio0" value=0>
+                                <label class="form-check-label" for="inlineRadio0">0</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Cleanliness" id="inlineRadio1" value=1>
+                                <label class="form-check-label" for="inlineRadio1">1</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Cleanliness" id="inlineRadio2" value=2>
+                                <label class="form-check-label" for="inlineRadio2">2</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Cleanliness" id="inlineRadio3" value=3 checked>
+                                <label class="form-check-label" for="inlineRadio3">3</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Cleanliness" id="inlineRadio4" value=4>
+                                <label class="form-check-label" for="inlineRadio4">4</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Cleanliness" id="inlineRadio5" value=5>
+                                <label class="form-check-label" for="inlineRadio5">5</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Cleanliness" id="inlineRadio6" value=6>
+                                <label class="form-check-label" for="inlineRadio6">6</label>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary" style="width: 250px;margin-left: auto;">Submit</button>
+                        </div>
+                    </div>
+                    
+                </form>
+
+            </div>
+            <div class="col-sm-2">
+                <img src="/static/images/plane5.png">
+            </div>
+        </div>   
+        
+
+    </div>
+    <script type = "text/javascript">
+        function updateTextInput(val) {
+            document.getElementById('textInput').value=val; 
+      }
+    </script>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
+
